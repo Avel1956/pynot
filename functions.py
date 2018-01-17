@@ -3,7 +3,7 @@ import re
 import string
 from collections import Counter
 
-
+#Preprocessing definitions
 def opencorpus(textname):
     """Open file and return raw string
 
@@ -33,4 +33,12 @@ def filter_symb(tokens):
     pattern = re.compile('[{}]'.format(re.escape(string.punctuation)))
     filtered_tokens = filter(None, [pattern.sub('', token) for token in tokens])
 
+    return filtered_tokens
+
+def remove_stopwords(tokens):
+    """Filter stopwods and return filtered tokens
+
+                tokens   text string"""
+    stopword_list = nltk.corpus.stopwords.words('english')
+    filtered_tokens = [token for token in tokens if token not in stopword_list]
     return filtered_tokens
