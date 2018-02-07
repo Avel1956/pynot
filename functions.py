@@ -3,7 +3,8 @@ import re
 import string
 from collections import Counter
 
-#Preprocessing definitions
+
+# Preprocessing definitions
 def opencorpus(textname):
     """Open file and return raw string
 
@@ -34,6 +35,7 @@ def filter_symb(tokens):
     filtered_tokens = filter(None, [pattern.sub('', token) for token in tokens])
 
     return filtered_tokens
+
 
 def remove_stopwords(tokens):
     """Filter stopwods and return filtered tokens
