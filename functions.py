@@ -44,3 +44,12 @@ def remove_stopwords(tokens):
     stopword_list = nltk.corpus.stopwords.words('english')
     filtered_tokens = [token for token in tokens if token not in stopword_list]
     return filtered_tokens
+
+def get_nice_string(list_or_iterator):
+    """Set list in a legible format"""
+    return "[" + ", ".join( str(x) for x in list_or_iterator) + "]"
+
+def histogram(self, count_words):
+    from nltk import FreqDist
+    fdist = FreqDist(count_words)
+    fdist.plot(25, cumulative=True)
