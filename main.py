@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QInputDialog, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5 import QtGui, QtCore
 from texui import Ui_MainWindow
 from functions import*
@@ -41,15 +41,13 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
 
     def tok(self):
         d = data
+        import time
+        tik = time.clock()
         len(d)
 
         if len(d) > 1:
 
-            # from texclass import TexProp
-            # consclass = TexProp('zarathustra', 1560, 50, 3)
-            # wordcount = consclass.get_wordcount()
-            # s = 'wordcount=' + repr(wordcount)
-            # self.ventPrincipal.setText(s)
+
 
             token_list = tokenize_text(d)
             fil = [filter(None, [filter_symb(tokens)
@@ -78,13 +76,15 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             # phrase_count = Counter(l_phrases)
             # phrase_frecuent = phrase_count.most_common(1)
 
-
+            tok = time.clock()
+            exec_time = 'Analysis time= ' + repr(tok-tik) + ' s.'
             word_raw_message = 'wordcount raw = ' + repr(len(l_words_raw))
             phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
             word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
             phrase_symfil_message = 'Phrase count symbols filtered = ' + repr(len(l_phrases))
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
+            self.ventPrincipal.append(exec_time)
             self.ventPrincipal.append(word_raw_message)
             self.ventPrincipal.append(phrase_raw_message)
             self.ventPrincipal.append(word_symfil_message)

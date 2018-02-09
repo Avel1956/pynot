@@ -53,3 +53,7 @@ def histogram(self, count_words):
     from nltk import FreqDist
     fdist = FreqDist(count_words)
     fdist.plot(25, cumulative=True)
+
+def chapter_split(raw_string):
+    """Enter raw text as string, return list of chapters as strings"""
+
