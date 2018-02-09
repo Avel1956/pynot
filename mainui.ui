@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Text analysis</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="ventPrincipal">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>421</width>
+      <height>531</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>0</y>
+      <width>251</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>90</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="chWords">
+        <property name="text">
+         <string>Words</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chParagraph">
+        <property name="text">
+         <string>Pharagraph</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>10</y>
+       <width>90</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="chPhrases">
+        <property name="text">
+         <string>Phrases</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_5">
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_6">
+        <property name="text">
+         <string>CheckBox</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="butExec">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>112</y>
+       <width>101</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Execute</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="butReset">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>170</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reset</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>713</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionExit"/>
+    <addaction name="actionSave_CVS"/>
+   </widget>
+   <widget class="QMenu" name="menuProcessing">
+    <property name="title">
+     <string>Processing</string>
+    </property>
+    <addaction name="actionTokenization"/>
+   </widget>
+   <widget class="QMenu" name="menuPost_processing">
+    <property name="title">
+     <string>Post processing</string>
+    </property>
+    <widget class="QMenu" name="menuCharts">
+     <property name="title">
+      <string>Charts</string>
+     </property>
+     <addaction name="actionHistogram"/>
+     <addaction name="actionProfile"/>
+     <addaction name="actionCluster"/>
+    </widget>
+    <widget class="QMenu" name="menuTables">
+     <property name="title">
+      <string>Tables</string>
+     </property>
+     <addaction name="actionCount"/>
+     <addaction name="actionPhrase_count"/>
+    </widget>
+    <addaction name="menuCharts"/>
+    <addaction name="menuTables"/>
+    <addaction name="actionCompare"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuProcessing"/>
+   <addaction name="menuPost_processing"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSave_CVS">
+   <property name="text">
+    <string>Save CVS</string>
+   </property>
+  </action>
+  <action name="actionTokenization">
+   <property name="text">
+    <string>Tokenization</string>
+   </property>
+  </action>
+  <action name="actionCompare">
+   <property name="text">
+    <string>Compare</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actionProfile">
+   <property name="text">
+    <string>Profile</string>
+   </property>
+  </action>
+  <action name="actionCluster">
+   <property name="text">
+    <string>Cluster</string>
+   </property>
+  </action>
+  <action name="actionCount">
+   <property name="text">
+    <string>Count</string>
+   </property>
+  </action>
+  <action name="actionPhrase_count">
+   <property name="text">
+    <string>Phrase count</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
