@@ -59,36 +59,44 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             # filteredstopwords = remove_stopwords(filteredsymbols)
             l_phrases = token_list
 
-            l_words = []
+            l_words_raw = []
             for list in token_list:
                 for x in list:
-                    l_words.append(x)
-            global count_words
-
-            count_words = Counter(l_words)
-            words_frecuent = count_words.most_common(2)
-
-
-
+                    l_words_raw.append(x)
+            global count_words_raw
+            l_words_sym_fil = []
+            for list in fil:
+                for x in list:
+                    l_words_sym_fil.append(x)
+            global count_words_raw
+            global count_words_symfil
+            count_words_raw = Counter(l_words_raw)
+            count_words_symfil = Counter(l_words_sym_fil)
+            words_frecuent_raw = count_words_raw.most_common(2)
+            words_frecuent_symfil = count_words_symfil.most_common(2)
 
             # phrase_count = Counter(l_phrases)
             # phrase_frecuent = phrase_count.most_common(1)
 
 
-            word_message = 'wordcount raw = ' + repr(len(l_words))
-            phrase_message = 'Phrase count raw = ' + repr(len(l_phrases))
-            self.ventPrincipal.setTextColor(QtGui.QColor('red'))
+            word_raw_message = 'wordcount raw = ' + repr(len(l_words_raw))
+            phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
+            word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
+            phrase_symfil_message = 'Phrase count symbols filtered = ' + repr(len(l_phrases))
+            self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
-            self.ventPrincipal.append(word_message)
-            self.ventPrincipal.append(phrase_message)
+            self.ventPrincipal.append(word_raw_message)
+            self.ventPrincipal.append(phrase_raw_message)
+            self.ventPrincipal.append(word_symfil_message)
+
             # self.ventPrincipal.append(repr(get_nice_string(words_frecuent)))
         else:
             self.ventPrincipal.setText('Please load file')
 
-    def histogram(self, count_words):
-        from nltk import FreqDist
-        fdist = FreqDist(count_words)
-        fdist.plot(25, cumulative=True)
+    def histogram(self):
+         from nltk import FreqDist
+         fdist = FreqDist(count_words_raw)
+         fdist.plot(25, cumulative=True)
 
 
 
