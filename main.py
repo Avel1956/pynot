@@ -3,6 +3,7 @@ from PyQt5 import QtGui, QtCore
 from texui import Ui_MainWindow
 from functions import*
 
+
 data = []
 
 class Tex_Ui(QMainWindow, Ui_MainWindow):
@@ -33,6 +34,8 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
                 data = f.read()
 
                 self.ventPrincipal.setText(data)
+
+
 
 
 
