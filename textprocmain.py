@@ -1,10 +1,9 @@
-<<<<<<< HEAD
+
 import sys
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog, QFileDialog
 from PyQt5.uic import loadUi
-=======
->>>>>>> 0a08626f64a0baf3076e2061bb5cb937926d7488
+
 import nltk
 import re
 import sys
@@ -12,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import string
 from texui import Ui_MainWindow
 from functions import*
-<<<<<<< HEAD
+
 CorpusRaw = []
 CorpusTokenRaw = []
 
@@ -53,7 +52,7 @@ widget.show()
 
 sys.exit(app.exec_())
 
-=======
+
 from collections import Counter
 from functions import *
 
@@ -66,7 +65,7 @@ ui.setupUi(MainWindow)
 MainWindow.show()
 
 self.actionExit.triggered.connect(self.exitCall)
->>>>>>> 0a08626f64a0baf3076e2061bb5cb937926d7488
+
 
 
 sys.exit(app.exec_())

@@ -85,6 +85,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
             word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
             phrase_symfil_message = 'Phrase count symbols filtered = ' + repr(len(l_phrases))
+            chap = chapter_split(d)
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
             self.ventPrincipal.append(exec_time)

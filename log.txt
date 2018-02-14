@@ -1,0 +1,22 @@
+Filename,Average chapter length,Number of chapters
+"filosofia_zara.txt",68.92558139534884,215
+"filosofia_zara.txt",68.92558139534884,215
+"filosofia_zara.txt",68.92558139534884,215
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
+"literature_moby.txt",156.5144927536232,138
