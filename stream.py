@@ -4,6 +4,12 @@
 import re
 import os
 
+class Test():
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+
 
 def cli(book, nochapters, stats):
     """ This tool breaks up a plain text book into chapters.

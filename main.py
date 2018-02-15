@@ -1,15 +1,16 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PyQt5 import QtGui, QtCore
+from PyQt5 import QtGui
 from texui import Ui_MainWindow
-from functions import*
+from functions import *
 
 
 data = []
+fname = []
 
 class Tex_Ui(QMainWindow, Ui_MainWindow):
+
     def __init__(self):
         super(Tex_Ui, self).__init__()
-
 
         # Set up the user interface from Designer.
         self.setupUi(self)
@@ -23,21 +24,18 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
         # Connect up the buttons.
 
     def openFile(self):
-        fname = QFileDialog.getOpenFileName(self, 'Open file', '/home')
+        global fname
         global data
+        fname = QFileDialog.getOpenFileName(self, 'Open file', '/home')
 
         if fname[0]:
+
             f = open(fname[0], 'r', encoding='utf8')
 
             with f:
-
                 data = f.read()
 
                 self.ventPrincipal.setText(data)
-
-
-
-
 
 
 
@@ -49,8 +47,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
         len(d)
 
         if len(d) > 1:
-
-
+            
 
             token_list = tokenize_text(d)
             fil = [filter(None, [filter_symb(tokens)
@@ -80,12 +77,13 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             # phrase_frecuent = phrase_count.most_common(1)
 
             tok = time.clock()
-            exec_time = 'Analysis time= ' + repr(tok-tik) + ' s.'
+            exec_time = 'Analysis time= ' + repr(tok - tik) + ' s.'
             word_raw_message = 'wordcount raw = ' + repr(len(l_words_raw))
             phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
             word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
             phrase_symfil_message = 'Phrase count symbols filtered = ' + repr(len(l_phrases))
-            chap = chapter_split(d)
+
+
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
             self.ventPrincipal.append(exec_time)
@@ -97,14 +95,11 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
         else:
             self.ventPrincipal.setText('Please load file')
 
-    def histogram(self):
-         from nltk import FreqDist
-         fdist = FreqDist(count_words_raw)
-         fdist.plot(25, cumulative=True)
-
-
-
-
+    @staticmethod
+    def histogram():
+        from nltk import FreqDist
+        fdist = FreqDist(count_words_raw)
+        fdist.plot(25, cumulative=True)
 
 
 if __name__ == "__main__":
