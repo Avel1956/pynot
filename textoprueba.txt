@@ -2,3 +2,15 @@
 Change scroll functionality.
 Implement multiple document type parser.
 Implement word tree
+
+tes>
+chapters--list
+contents--string
+endLine--str
+endLocation--int
+filename--str
+headingLocations--list--int
+headings--list--int
+lines--list--str with lines
+nochapters--bool
+numchapters--int

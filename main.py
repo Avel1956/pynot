@@ -6,7 +6,7 @@ from functions import *
 
 data = []
 fname = []
-
+tes = []
 class Tex_Ui(QMainWindow, Ui_MainWindow):
 
     def __init__(self):
@@ -17,7 +17,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
         self.actionExit.triggered.connect(self.close)
         self.actionOpen.triggered.connect(self.openFile)
         self.actionHistogram.triggered.connect(self.histogram)
-        self.butExec.clicked.connect(self.tok)
+        self.butExec.clicked.connect(self.execute)
 
         # Make some local modifications.
 
@@ -34,13 +34,13 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
 
             with f:
                 data = f.read()
-
+                self.ventPrincipal.setTextColor(QtGui.QColor('grey'))
                 self.ventPrincipal.setText(data)
 
 
 
 
-    def tok(self):
+    def execute(self):
         d = data
         import time
         tik = time.clock()
@@ -82,7 +82,14 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
             word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
             phrase_symfil_message = 'Phrase count symbols filtered = ' + repr(len(l_phrases))
+            from texclass import Book
+            global tes
+            try:
+                tes = Book(fname[0], nochapters=False, stats=True)
 
+            except Exception:
+                self.ventPrincipal.setTextColor(QtGui.QColor('red'))
+                self.ventPrincipal.append('Not recognized chapter format found')
 
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
@@ -93,13 +100,14 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
 
             # self.ventPrincipal.append(repr(get_nice_string(words_frecuent)))
         else:
+            self.ventPrincipal.setTextColor(QtGui.QColor('red'))
             self.ventPrincipal.setText('Please load file')
 
-    @staticmethod
-    def histogram():
+    def histogram(self):
         from nltk import FreqDist
         fdist = FreqDist(count_words_raw)
         fdist.plot(25, cumulative=True)
+
 
 
 if __name__ == "__main__":

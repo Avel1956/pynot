@@ -30,3 +30,15 @@ Filename,Average chapter length,Number of chapters
 "literature_moby.txt",156.5144927536232,138
 "literature_moby.txt",156.5144927536232,138
 "C:/Users/Jaime Velez/Documents/GitHub/pynot/literature_moby.txt",156.5144927536232,138
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/literature_moby.txt",156.5144927536232,138
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
