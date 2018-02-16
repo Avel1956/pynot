@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5 import QtGui
-from texui import Ui_MainWindow
+from texuio import Ui_MainWindow
 from functions import *
 
 
