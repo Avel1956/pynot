@@ -1,4 +1,4 @@
-from stream import Book
+from texclass import Book
 
 
 
