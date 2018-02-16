@@ -76,8 +76,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
             # phrase_count = Counter(l_phrases)
             # phrase_frecuent = phrase_count.most_common(1)
 
-            tok = time.clock()
-            exec_time = 'Analysis time= ' + repr(tok - tik) + ' s.'
+
             word_raw_message = 'wordcount raw = ' + repr(len(l_words_raw))
             phrase_raw_message = 'Phrase count raw = ' + repr(len(l_phrases))
             word_symfil_message = 'word count symbols filtered = ' + repr(len(l_words_sym_fil))
@@ -91,10 +90,20 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
                 self.ventPrincipal.setTextColor(QtGui.QColor('red'))
                 self.ventPrincipal.append('Not recognized chapter format found')
 
+            tok = time.clock()
+
+            exec_time = 'Decomposition time= ' + repr(tok - tik) + ' s.'
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
             self.ventPrincipal.append('_____________________')
+            self.ventPrincipal.setTextColor(QtGui.QColor('blue'))
+            self.ventPrincipal.append(repr(fname[0]))
             self.ventPrincipal.append(exec_time)
+            self.ventPrincipal.setTextColor(QtGui.QColor('green'))
+            self.ventPrincipal.append('Text statistics:')
             self.ventPrincipal.append(word_raw_message)
+            self.ventPrincipal.append('Number of found chapters = ' + repr(tes.numChapters))
+            self.ventPrincipal.append('Number of lines = ' + repr(len(tes.lines)))
+            self.ventPrincipal.append('Name of found chapters = ' + repr(tes.headings))
             self.ventPrincipal.append(phrase_raw_message)
             self.ventPrincipal.append(word_symfil_message)
 
