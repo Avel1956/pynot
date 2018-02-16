@@ -47,7 +47,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
         len(d)
 
         if len(d) > 1:
-            
+
 
             token_list = tokenize_text(d)
             fil = [filter(None, [filter_symb(tokens)
