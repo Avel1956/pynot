@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Text analysis</string>
+   <string>Text analysis- V.0.1 &quot;Thamsanqa&quot;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextBrowser" name="ventPrincipal">
@@ -30,7 +30,7 @@
       <x>440</x>
       <y>0</y>
       <width>251</width>
-      <height>211</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -44,8 +44,8 @@
       <rect>
        <x>20</x>
        <y>10</y>
-       <width>90</width>
-       <height>83</height>
+       <width>231</width>
+       <height>191</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -56,62 +56,12 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QCheckBox" name="chWords">
+       <widget class="QLabel" name="instructions">
         <property name="text">
-         <string>Words</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sequence:&lt;/p&gt;&lt;p&gt;1- Load &lt;span style=&quot; font-weight:600;&quot;&gt;.txt&lt;/span&gt; file&lt;/p&gt;&lt;p&gt;2- &lt;span style=&quot; font-weight:600;&quot;&gt;Execute &lt;/span&gt;for general text decomposition&lt;/p&gt;&lt;p&gt;3- Select&lt;span style=&quot; font-weight:600;&quot;&gt; Chapte&lt;/span&gt;r (single or all)&lt;/p&gt;&lt;p&gt;4- Perform &lt;span style=&quot; font-weight:600;&quot;&gt;postprocessing&lt;/span&gt; analysis&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chParagraph">
-        <property name="text">
-         <string>Pharagraph</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox">
-        <property name="text">
-         <string>CheckBox</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QFrame" name="frame_2">
-     <property name="geometry">
-      <rect>
-       <x>160</x>
-       <y>10</y>
-       <width>90</width>
-       <height>83</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
-       <widget class="QCheckBox" name="chPhrases">
-        <property name="text">
-         <string>Phrases</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_5">
-        <property name="text">
-         <string>CheckBox</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="checkBox_6">
-        <property name="text">
-         <string>CheckBox</string>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -121,7 +71,7 @@
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>112</y>
+       <y>230</y>
        <width>101</width>
        <height>81</height>
       </rect>
@@ -133,16 +83,64 @@
     <widget class="QPushButton" name="butReset">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>170</y>
-       <width>75</width>
-       <height>23</height>
+       <x>150</x>
+       <y>240</y>
+       <width>91</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="text">
       <string>Reset</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QLabel" name="systmes">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>370</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>System messages</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="chapterSel">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>470</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>true</bool>
+    </property>
+    <property name="currentText">
+     <string>Chapter select</string>
+    </property>
+    <property name="maxVisibleItems">
+     <number>10</number>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QComboBox::AdjustToContents</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="author">
+    <property name="geometry">
+     <rect>
+      <x>536</x>
+      <y>530</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Jaime Andrés Vélez -2018</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -163,12 +161,6 @@
     <addaction name="actionExit"/>
     <addaction name="actionSave_CVS"/>
    </widget>
-   <widget class="QMenu" name="menuProcessing">
-    <property name="title">
-     <string>Processing</string>
-    </property>
-    <addaction name="actionTokenization"/>
-   </widget>
    <widget class="QMenu" name="menuPost_processing">
     <property name="title">
      <string>Post processing</string>
@@ -180,6 +172,7 @@
      <addaction name="actionHistogram"/>
      <addaction name="actionProfile"/>
      <addaction name="actionCluster"/>
+     <addaction name="actionFrecuency"/>
     </widget>
     <widget class="QMenu" name="menuTables">
      <property name="title">
@@ -192,9 +185,32 @@
     <addaction name="menuTables"/>
     <addaction name="actionCompare"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuTrees">
+     <property name="title">
+      <string>Trees</string>
+     </property>
+     <addaction name="actionRaw_doc_tree"/>
+     <addaction name="actionChapters_tree"/>
+     <addaction name="actionWord_Tree"/>
+    </widget>
+    <addaction name="menuTrees"/>
+    <addaction name="actionStatistic_analysis"/>
+   </widget>
+   <widget class="QMenu" name="menuAdvanced">
+    <property name="title">
+     <string>Advanced</string>
+    </property>
+    <addaction name="actionSentiment_analysis"/>
+    <addaction name="actionSimilarity"/>
+   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuProcessing"/>
    <addaction name="menuPost_processing"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuAdvanced"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -250,6 +266,41 @@
   <action name="actionPhrase_count">
    <property name="text">
     <string>Phrase count</string>
+   </property>
+  </action>
+  <action name="actionFrecuency">
+   <property name="text">
+    <string>Frecuency</string>
+   </property>
+  </action>
+  <action name="actionRaw_doc_tree">
+   <property name="text">
+    <string>Raw doc tree</string>
+   </property>
+  </action>
+  <action name="actionChapters_tree">
+   <property name="text">
+    <string>Chapters tree</string>
+   </property>
+  </action>
+  <action name="actionWord_Tree">
+   <property name="text">
+    <string>Word Tree</string>
+   </property>
+  </action>
+  <action name="actionStatistic_analysis">
+   <property name="text">
+    <string>Statistic analysis</string>
+   </property>
+  </action>
+  <action name="actionSentiment_analysis">
+   <property name="text">
+    <string>Sentiment analysis</string>
+   </property>
+  </action>
+  <action name="actionSimilarity">
+   <property name="text">
+    <string>Similarity</string>
    </property>
   </action>
  </widget>

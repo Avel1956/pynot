@@ -8,6 +8,7 @@ class Book():
         self.contents = self.getContents()
         self.lines = self.getLines()
         self.headings = self.getHeadings()
+
         # Alias for historical reasons. FIXME
         self.headingLocations = self.headings
         self.ignoreTOC()
@@ -17,11 +18,10 @@ class Book():
         self.chapters = self.getTextBetweenHeadings()
         # logging.info('Chapters: %s' % self.chapters)
         self.numChapters = len(self.chapters)
+        self.stats = self.getStats()
 
-        if stats:
-            self.getStats()
-        else:
-            self.writeChapters()
+
+        self.writeChapters()
 
     def getContents(self):
         """
@@ -180,21 +180,12 @@ class Book():
         averageChapterLength = sum([len(chapter) for chapter in self.chapters])/numChapters
         headings = ['Filename', 'Average chapter length', 'Number of chapters']
         stats = ['"' + self.filename + '"', averageChapterLength, numChapters]
-        stats = [str(val) for val in stats]
-        headings = ','.join(headings) + '\n'
-        statsLog = ','.join(stats) + '\n'
-        print('Log headings: %s' % headings)
-        print('Log stats: %s' % statsLog)
+        statstring = [str(val) for val in stats]
+        headingstring = ','.join(headings) + '\n'
+        #statsLog = ','.join(stats) + '\n'
+        statistics = [stats, headingstring]
+        return statistics
 
-        if not os.path.exists('log.txt'):
-            print('Log file does not exist. Creating it.')
-            with open('log.txt', 'w') as f:
-                f.write(headings)
-                f.close()
-
-        with open('log.txt', 'a') as f:
-            f.write(statsLog)
-            f.close()
 
     def writeChapters(self):
         chapterNums = self.zeroPad(range(1, len(self.chapters)+1))

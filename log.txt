@@ -51,3 +51,4 @@ Filename,Average chapter length,Number of chapters
 "C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
 "C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
 "C:/guit/pynot/filosofia_zara.txt",68.92558139534884,215
+"C:/Users/Jaime Velez/Documents/GitHub/pynot/filosofia_zara.txt",68.92558139534884,215
