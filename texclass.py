@@ -213,7 +213,7 @@ class Book():
             ext = '.txt'
             for num, chapter in zip(chapterNums, self.chapters):
                 path = outDir + '/' + num + ext
-                print(chapter)
+
                 chapter = '\n'.join(chapter)
                 with open(path, 'w') as f:
                     f.write(chapter)

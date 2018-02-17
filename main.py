@@ -41,14 +41,17 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
 
 
     def execute(self):
+        self.systmes.setText("Executing...")
         d = data
         import time
         tik = time.clock()
+
+
         len(d)
 
         if len(d) > 1:
 
-
+            self.systmes.setText("Executing...")
             token_list = tokenize_text(d)
             fil = [filter(None, [filter_symb(tokens)
                                  for tokens in sentence_tokens])
@@ -91,6 +94,7 @@ class Tex_Ui(QMainWindow, Ui_MainWindow):
                 self.ventPrincipal.append('Not recognized chapter format found')
 
             tok = time.clock()
+            self.systmes.setText("Done.")
 
             exec_time = 'Decomposition time= ' + repr(tok - tik) + ' s.'
             self.ventPrincipal.setTextColor(QtGui.QColor('green'))
